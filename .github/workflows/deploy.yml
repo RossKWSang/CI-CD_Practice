@@ -16,4 +16,7 @@ jobs:
         username: ec2-user
         key: ${{ secrets.SSH_KEY }}
         port: 22
-        script: whoami
+        script: |
+          cd cicd
+          git pull
+          
