@@ -30,3 +30,10 @@ jobs:
         pytest
         coverage run -m pytest
         coverage report
+        coverage html
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: coverage-report
+        path: htmlcov
+        retention-days: 7
