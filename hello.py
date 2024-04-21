@@ -13,4 +13,3 @@ def hello_world():
     :return: HTML
     """
     return "<p>Hello, World! jenkins test 2</p>"
-
