@@ -1,22 +1,22 @@
-name: deploy
-on:
-  workflow_run:
-    workflows: ["Pylint", "Pytest"]
-    types:
-      - completed
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-    - name: remote-ssh
-      uses: appleboy/ssh-action@v0.1.8
-      with:
-        host: 3.38.244.160
-        username: ec2-user
-        key: ${{ secrets.SSH_KEY }}
-        port: 22
-        script: |
-          cd CI-CD_Practice
-          git pull
-          
+#name: deploy
+#on:
+#  workflow_run:
+#    workflows: ["Pylint", "Pytest"]
+#    types:
+#      - completed
+#
+#jobs:
+#  deploy:
+#    runs-on: ubuntu-latest
+#    steps:
+#    - name: remote-ssh
+#      uses: appleboy/ssh-action@v0.1.8
+#      with:
+#        host: 3.38.244.160
+#        username: ec2-user
+#        key: ${{ secrets.SSH_KEY }}
+#        port: 22
+#        script: |
+#          cd CI-CD_Practice
+#          git pull
+#
