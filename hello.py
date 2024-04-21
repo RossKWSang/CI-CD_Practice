@@ -12,4 +12,4 @@ def hello_world():
     hello world api
     :return: HTML
     """
-    return "<p>Hello, World! jenkins test</p>"
+    return "<p>Hello, World! jenkins test 2</p>"
