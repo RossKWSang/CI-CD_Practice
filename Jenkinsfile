@@ -27,7 +27,9 @@ pipeline {
             steps {
                 sshagent (credentials: ['cicd-pem-username']) {
                     sh '''
-                        ssh -o "StrictHostKeyChecking no" ec2-user@3.38.244.160 "cd CI-CD_Practice && git pull"
+                        ssh -o "StrictHostKeyChecking no" ec2-user@3.38.244.160 "cd CI-CD_Practice \
+                         && git pull \
+                         && whoami"
                     '''
                 }
             }
