@@ -5,7 +5,7 @@ pipeline {
         stage('start') {
             agent any
             steps {
-                slacksend (channel: '#cicd-jenkins', message: "start")
+                slackSend (channel: '#cicd-jenkins', message: "start")
             }
         }
         stage('ci') {
@@ -35,7 +35,7 @@ pipeline {
         stage('end') {
             agent any
             steps {
-                slacksend (channel: '#cicd-jenkins', message: "end")
+                slackSend (channel: '#cicd-jenkins', message: "end")
             }
         }
     }
