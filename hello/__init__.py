@@ -20,6 +20,6 @@ def create_app():
 
     @app.route("/")
     def hello():
-        return "Hello, World, change test 22"
+        return "Hello, World, change test dockerize"
 
     return app

@@ -28,8 +28,11 @@ pipeline {
                 sshagent (credentials: ['cicd-pem-username']) {
                     sh '''
                         ssh -o "StrictHostKeyChecking no" ec2-user@3.38.244.160 "cd CI-CD_Practice \
-                         && git pull \
-                         && whoami"
+                        && git pull \
+                        && docker rmi pyhello:flask \
+                        && docker build -t pyhello:flask . \
+                        && docker stop dockertest \
+                        && docker run -d --rm -p 0.0.0.0:5000:5000/tcp --name dockertest pyhello:flask"
                     '''
                 }
             }
